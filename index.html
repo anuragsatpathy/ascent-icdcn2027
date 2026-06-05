@@ -341,11 +341,41 @@
       line-height: 1.25;
     }
 
+    .person b a {
+      color: inherit;
+      text-decoration-color: rgba(0, 121, 124, .42);
+      text-underline-offset: 3px;
+    }
+
+    .person b a:hover,
+    .person b a:focus {
+      color: var(--teal);
+      outline: none;
+    }
+
     .person span {
       display: block;
       margin-top: 8px;
       color: var(--muted);
       font-size: 14px;
+    }
+
+    .tpc-list {
+      columns: 2;
+      column-gap: 44px;
+      margin: 0;
+      padding: 26px 34px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      color: #334357;
+      font-weight: 620;
+    }
+
+    .tpc-list li {
+      break-inside: avoid;
+      margin: 0 0 12px;
+      padding-left: 4px;
     }
 
     .schedule {
@@ -443,6 +473,7 @@
       }
 
       .topics { columns: 1; }
+      .tpc-list { columns: 1; }
       .hero { min-height: 68vh; }
     }
   </style>
@@ -546,9 +577,9 @@
           <p class="lead">ASCENT 2027 is organized by researchers spanning edge/cloud systems, HPC, mobile computing, cyber-physical systems, and distributed intelligent applications.</p>
         </div>
         <div class="people">
-          <div class="person"><b>Anurag Satpathy</b><span>Missouri University of Science and Technology, USA<br>anurag.satpathy@mst.edu</span></div>
-          <div class="person"><b>Arindam Khanda</b><span>Kennesaw State University, USA<br>akhanda@kennesaw.edu</span></div>
-          <div class="person"><b>Sourav Kanti Addya</b><span>National Institute of Technology Karnataka, India<br>souravkaddya@nitk.edu.in</span></div>
+          <div class="person"><b><a href="https://anuragsatpathy.github.io/" target="_blank" rel="noreferrer">Anurag Satpathy</a></b><span>Missouri University of Science and Technology, USA<br>anurag.satpathy@mst.edu</span></div>
+          <div class="person"><b><a href="https://arindamk92.github.io/" target="_blank" rel="noreferrer">Arindam Khanda</a></b><span>Kennesaw State University, USA<br>akhanda@kennesaw.edu</span></div>
+          <div class="person"><b><a href="https://souravkaddya.in/" target="_blank" rel="noreferrer">Sourav Kanti Addya</a></b><span>National Institute of Technology Karnataka, India<br>souravkaddya@nitk.edu.in</span></div>
           <div class="person"><b>Hirozumi Yamaguchi</b><span>Osaka University, Japan<br>h-yamagu@ist.osaka-u.ac.jp</span></div>
         </div>
       </div>
@@ -560,25 +591,25 @@
           <h2>Proposed Technical Program Committee</h2>
           <p class="lead">The TPC will bring together expertise in distributed systems, edge computing, HPC, AI systems, networking, and applied intelligent infrastructure.</p>
         </div>
-        <div class="people">
-          <div class="person"><b>Chittaranjan Swain</b><span>ABV-IIITM Gwalior</span></div>
-          <div class="person"><b>Sushree Padhan</b><span>IIT Kharagpur</span></div>
-          <div class="person"><b>Federico Coro</b><span>University of Padova</span></div>
-          <div class="person"><b>Kajal Kishori</b><span>NIT Rourkela</span></div>
-          <div class="person"><b>Sanghamitra Mishra</b><span>IIT Patna</span></div>
-          <div class="person"><b>Doris Brown</b><span>Missouri S&T</span></div>
-          <div class="person"><b>Andrea Augello</b><span>Universita degli Studi di Palermo</span></div>
-          <div class="person"><b>Debjyoti Sengupta</b><span>Missouri S&T</span></div>
-          <div class="person"><b>Satyaki Roy</b><span>University of Alabama in Huntsville</span></div>
-          <div class="person"><b>Reet Barik</b><span>Argonne National Lab</span></div>
-          <div class="person"><b>Pouya Kousha</b><span>Nvidia</span></div>
-          <div class="person"><b>Maya Taylor</b><span>UIUC</span></div>
-          <div class="person"><b>Harshita Sahni</b><span>UNM</span></div>
-          <div class="person"><b>Ayush Chaturvedi</b><span>Washington University in St. Louis</span></div>
-          <div class="person"><b>Aisha B Rahman</b><span>Arizona State University</span></div>
-          <div class="person"><b>Francesco Betti Sorbelli</b><span>University of Perugia</span></div>
-          <div class="person"><b>Prithwiraj Roy</b><span>Global Action Alliance Inc.</span></div>
-        </div>
+        <ul class="tpc-list">
+          <li>Chittaranjan Swain, ABV-IIITM Gwalior</li>
+          <li>Sushree Padhan, IIT Kharagpur</li>
+          <li>Federico Coro, University of Padova</li>
+          <li>Kajal Kishori, NIT Rourkela</li>
+          <li>Sanghamitra Mishra, IIT Patna</li>
+          <li>Doris Brown, Missouri S&amp;T</li>
+          <li>Andrea Augello, Universita degli Studi di Palermo</li>
+          <li>Debjyoti Sengupta, Missouri S&amp;T</li>
+          <li>Satyaki Roy, University of Alabama in Huntsville</li>
+          <li>Reet Barik, Argonne National Lab</li>
+          <li>Pouya Kousha, Nvidia</li>
+          <li>Maya Taylor, UIUC</li>
+          <li>Harshita Sahni, UNM</li>
+          <li>Ayush Chaturvedi, Washington University in St. Louis</li>
+          <li>Aisha B Rahman, Arizona State University</li>
+          <li>Francesco Betti Sorbelli, University of Perugia</li>
+          <li>Prithwiraj Roy, Global Action Alliance Inc.</li>
+        </ul>
       </div>
     </section>
 

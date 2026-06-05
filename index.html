@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASCENT 2027 | ICDCN Workshop</title>
+  <style>
+    :root {
+      --ink: #17212f;
+      --muted: #526071;
+      --line: #d8e0e6;
+      --paper: #ffffff;
+      --mist: #f5f8f7;
+      --teal: #00797c;
+      --leaf: #627d2f;
+      --gold: #d8a334;
+      --coral: #b84e39;
+      --navy: #183a59;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.58;
+    }
+
+    a { color: inherit; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, .92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(216, 224, 230, .75);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      min-height: 72px;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    .mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      color: white;
+      background: linear-gradient(135deg, var(--teal), var(--leaf) 56%, var(--gold));
+      font-size: 13px;
+      letter-spacing: 0;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .links a {
+      text-decoration: none;
+      padding: 10px 12px;
+      border-radius: 8px;
+      color: #263445;
+    }
+
+    .links a:hover,
+    .links a:focus {
+      background: #edf5f3;
+      outline: none;
+    }
+
+    .hero {
+      min-height: 76vh;
+      display: grid;
+      align-items: end;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(11, 28, 43, .86) 0%, rgba(11, 28, 43, .58) 43%, rgba(11, 28, 43, .08) 100%),
+        url("assets/nitk-palms.jpeg") center/cover no-repeat;
+    }
+
+    .hero-inner {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 112px 0 72px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, .38);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .12);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    h1 {
+      max-width: 920px;
+      margin: 24px 0 18px;
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 820px;
+      margin: 0;
+      font-size: clamp(18px, 2.2vw, 24px);
+      color: rgba(255, 255, 255, .9);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 8px;
+      font-weight: 800;
+      text-decoration: none;
+      border: 1px solid transparent;
+    }
+
+    .button.primary {
+      background: var(--gold);
+      color: #1a1609;
+    }
+
+    .button.secondary {
+      border-color: rgba(255, 255, 255, .45);
+      color: white;
+      background: rgba(255, 255, 255, .12);
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      width: min(1180px, calc(100% - 48px));
+      margin: -38px auto 0;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(23, 33, 47, .12);
+    }
+
+    .fact {
+      background: white;
+      padding: 22px 24px;
+    }
+
+    .fact b {
+      display: block;
+      color: var(--teal);
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .fact span {
+      display: block;
+      margin-top: 6px;
+      font-size: 18px;
+      font-weight: 760;
+    }
+
+    section {
+      padding: 76px 0;
+    }
+
+    .section-inner {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 40px;
+      align-items: start;
+      margin-bottom: 34px;
+    }
+
+    h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .band {
+      background: var(--mist);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      padding: 22px;
+    }
+
+    .card h3 {
+      margin: 0 0 9px;
+      font-size: 20px;
+      line-height: 1.22;
+      color: #20344a;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+    }
+
+    .card p {
+      margin: 0;
+    }
+
+    .topics {
+      columns: 2;
+      column-gap: 44px;
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .topics li {
+      break-inside: avoid;
+      margin: 0 0 10px;
+      color: #334357;
+    }
+
+    .image-split {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .photo {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 18px 44px rgba(23, 33, 47, .16);
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .date {
+      border-left: 5px solid var(--teal);
+      background: white;
+      border-radius: 8px;
+      padding: 18px;
+      min-height: 150px;
+    }
+
+    .date time {
+      color: var(--coral);
+      font-weight: 850;
+      font-size: 18px;
+    }
+
+    .date span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-weight: 650;
+    }
+
+    .people {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .person {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      background: white;
+      min-height: 142px;
+    }
+
+    .person b {
+      display: block;
+      color: #20344a;
+      line-height: 1.25;
+    }
+
+    .person span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .schedule {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .schedule th,
+    .schedule td {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .schedule th {
+      background: #edf5f3;
+      color: #17333a;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .schedule tr:last-child td { border-bottom: 0; }
+
+    .keynote-placeholder {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 26px;
+      align-items: center;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+    }
+
+    .speaker-art {
+      aspect-ratio: 1;
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(0, 121, 124, .92), rgba(98, 125, 47, .88)),
+        url("assets/nitk-main-building.jpeg") center/cover;
+    }
+
+    .footer-visual {
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(11, 28, 43, .92), rgba(11, 28, 43, .62)),
+        url("assets/nitk-aerial.jpeg") center/cover no-repeat;
+    }
+
+    .footer-visual .section-inner {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 40px;
+      align-items: end;
+    }
+
+    .footer-visual h2 {
+      color: white;
+    }
+
+    .footer-visual p {
+      color: rgba(255, 255, 255, .88);
+    }
+
+    footer {
+      padding: 28px 0;
+      background: #101923;
+      color: rgba(255, 255, 255, .76);
+      font-size: 14px;
+    }
+
+    footer .section-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding-top: 16px;
+        padding-bottom: 14px;
+      }
+
+      .links { justify-content: flex-start; }
+      .facts, .grid, .timeline, .people, .section-head, .image-split, .keynote-placeholder, .footer-visual .section-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .topics { columns: 1; }
+      .hero { min-height: 68vh; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#home"><span class="mark">A27</span><span>ASCENT 2027</span></a>
+      <div class="links">
+        <a href="#home">Home</a>
+        <a href="#committee">Committee</a>
+        <a href="#program">Program</a>
+        <a href="#keynote">Keynote</a>
+        <a href="https://sites.google.com/view/ascent-icdcn2026/" target="_blank" rel="noreferrer">Previous Edition</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-inner">
+        <span class="eyebrow">In conjunction with ICDCN 2027 · NITK Surathkal</span>
+        <h1>ASCENT: Advances in Systems and Computation at the Edge and HPC Networks</h1>
+        <p class="subtitle">The 2nd workshop on HPC, edge computing, LLM-enabled systems, generative AI, quantum-aware workflows, and distributed intelligent infrastructure.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#cfp">Call for Papers</a>
+          <a class="button secondary" href="https://cs3-lab.github.io/icdcn/index.html" target="_blank" rel="noreferrer">ICDCN 2027</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="facts" aria-label="Workshop facts">
+      <div class="fact"><b>When</b><span>During ICDCN 2027, 4-7 January 2027</span></div>
+      <div class="fact"><b>Where</b><span>National Institute of Technology Karnataka, Surathkal, India</span></div>
+      <div class="fact"><b>Format</b><span>Full-day workshop with refereed papers and one keynote</span></div>
+    </div>
+
+    <section>
+      <div class="section-inner section-head">
+        <h2>About the Workshop</h2>
+        <p class="lead">ASCENT 2027 brings together researchers and practitioners working at the intersection of high-performance computing, edge systems, AI, and emerging computing paradigms. The workshop is designed as a focused forum for architectures, algorithms, systems, and applications that push sophisticated computation closer to where data is produced.</p>
+      </div>
+      <div class="section-inner grid">
+        <article class="card">
+          <h3>Edge-HPC Systems</h3>
+          <p>Scalable, fault-tolerant infrastructure for decentralized and resource-constrained environments, including placement, orchestration, scheduling, and performance optimization.</p>
+        </article>
+        <article class="card">
+          <h3>AI and LLMs</h3>
+          <p>Distributed inference, model compression, privacy-preserving learning, generative AI services, and AI accelerator management across edge-HPC systems.</p>
+        </article>
+        <article class="card">
+          <h3>Quantum-Aware Workflows</h3>
+          <p>Quantum computing, quantum-inspired optimization, and hybrid quantum-HPC-edge workflows for complex distributed applications.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="band" id="cfp">
+      <div class="section-inner image-split">
+        <div>
+          <h2>Call for Papers</h2>
+          <p class="lead">We welcome original research, forward-looking ideas, practical experience reports, and use-case-driven studies across the converging ecosystems of HPC, edge computing, AI, LLMs, and quantum computing.</p>
+          <ul class="topics">
+            <li>Architectures for the edge, fog, and cloud continuum</li>
+            <li>HPC-inspired solutions adapted for edge environments</li>
+            <li>AI, generative AI, and LLMs on HPC-powered edge platforms</li>
+            <li>Distributed LLM inference, serving, compression, and orchestration</li>
+            <li>Data management, caching, and consistency across edge nodes</li>
+            <li>Security, privacy, and trust in decentralized systems</li>
+            <li>Energy efficiency and sustainability for edge HPC</li>
+            <li>Resource orchestration and multi-tenancy across the edge</li>
+            <li>5G/6G, O-RAN, VLC, mmWave, and network-aware edge computing</li>
+            <li>Quantum computing, quantum-inspired optimization, and hybrid workflows</li>
+            <li>IoT, smart grids, transportation, agriculture, AR/VR, and public safety</li>
+            <li>Benchmarking, testbeds, and large-scale experimental deployments</li>
+          </ul>
+        </div>
+        <img class="photo" src="assets/nitk-main-building.jpeg" alt="NITK main building">
+      </div>
+    </section>
+
+    <section>
+      <div class="section-inner section-head">
+        <h2>Submission Guidelines</h2>
+        <p class="lead">Submissions should use the official ACM LaTeX article template, with the `sigconf,authordraft` document class. Papers must be at most 6 pages in double-column ACM format, including figures, tables, and references. At least one author of each accepted paper must register for ICDCN and present the work in person.</p>
+      </div>
+      <div class="section-inner timeline">
+        <div class="date"><time>1 Aug 2026</time><span>Submission portal opens</span></div>
+        <div class="date"><time>1 Sep 2026</time><span>Paper submission deadline</span></div>
+        <div class="date"><time>15 Oct 2026</time><span>Acceptance notification</span></div>
+        <div class="date"><time>29 Oct 2026</time><span>Camera-ready deadline</span></div>
+        <div class="date"><time>4-7 Jan 2027</time><span>Workshop during ICDCN 2027</span></div>
+      </div>
+    </section>
+
+    <section class="band" id="committee">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>Committee</h2>
+          <p class="lead">ASCENT 2027 is organized by researchers spanning edge/cloud systems, HPC, mobile computing, cyber-physical systems, and distributed intelligent applications.</p>
+        </div>
+        <div class="people">
+          <div class="person"><b>Anurag Satpathy</b><span>Missouri University of Science and Technology, USA<br>anurag.satpathy@mst.edu</span></div>
+          <div class="person"><b>Arindam Khanda</b><span>Kennesaw State University, USA<br>akhanda@kennesaw.edu</span></div>
+          <div class="person"><b>Sourav Kanti Addya</b><span>National Institute of Technology Karnataka, India<br>souravkaddya@nitk.edu.in</span></div>
+          <div class="person"><b>Hirozumi Yamaguchi</b><span>Osaka University, Japan<br>h-yamagu@ist.osaka-u.ac.jp</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>Proposed Technical Program Committee</h2>
+          <p class="lead">The TPC will bring together expertise in distributed systems, edge computing, HPC, AI systems, networking, and applied intelligent infrastructure.</p>
+        </div>
+        <div class="people">
+          <div class="person"><b>Chittaranjan Swain</b><span>ABV-IIITM Gwalior</span></div>
+          <div class="person"><b>Sushree Padhan</b><span>IIT Kharagpur</span></div>
+          <div class="person"><b>Federico Coro</b><span>University of Padova</span></div>
+          <div class="person"><b>Kajal Kishori</b><span>NIT Rourkela</span></div>
+          <div class="person"><b>Sanghamitra Mishra</b><span>IIT Patna</span></div>
+          <div class="person"><b>Doris Brown</b><span>Missouri S&T</span></div>
+          <div class="person"><b>Andrea Augello</b><span>Universita degli Studi di Palermo</span></div>
+          <div class="person"><b>Debjyoti Sengupta</b><span>Missouri S&T</span></div>
+          <div class="person"><b>Satyaki Roy</b><span>University of Alabama in Huntsville</span></div>
+          <div class="person"><b>Reet Barik</b><span>Argonne National Lab</span></div>
+          <div class="person"><b>Pouya Kousha</b><span>Nvidia</span></div>
+          <div class="person"><b>Maya Taylor</b><span>UIUC</span></div>
+          <div class="person"><b>Harshita Sahni</b><span>UNM</span></div>
+          <div class="person"><b>Ayush Chaturvedi</b><span>Washington University in St. Louis</span></div>
+          <div class="person"><b>Aisha B Rahman</b><span>Arizona State University</span></div>
+          <div class="person"><b>Francesco Betti Sorbelli</b><span>University of Perugia</span></div>
+          <div class="person"><b>Prithwiraj Roy</b><span>Global Action Alliance Inc.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="program">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>Program</h2>
+          <p class="lead">The final schedule will be announced after paper acceptance. The proposed format is a full-day workshop with a keynote, 5-10 refereed papers, and discussion-oriented sessions.</p>
+        </div>
+        <table class="schedule">
+          <thead>
+            <tr><th>Session</th><th>Proposed Format</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Opening</td><td>Welcome from organizers and ASCENT 2027 framing</td><td>To be announced</td></tr>
+            <tr><td>Keynote</td><td>Invited talk on emerging edge-HPC, AI, or quantum-enabled systems</td><td>To be announced</td></tr>
+            <tr><td>Paper Sessions</td><td>Refereed research talks grouped by systems, AI/LLMs, and applications</td><td>After acceptance notification</td></tr>
+            <tr><td>Discussion</td><td>Community discussion on future directions and collaborative opportunities</td><td>To be announced</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="keynote">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>Keynote</h2>
+          <p class="lead">The keynote speaker will be announced after confirmation. Proposed speakers include Simone Silvestri, Eirini Eleni Tsiropoulou, Yogesh Simmhan, and Sajal K. Das.</p>
+        </div>
+        <div class="keynote-placeholder">
+          <div class="speaker-art" aria-hidden="true"></div>
+          <div>
+            <h3>Keynote speaker to be announced</h3>
+            <p class="lead">This space can feature the speaker photo, title, abstract, and biography once confirmed. For Google Sites, use a two-column section with the speaker image on the left and talk details on the right.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer-visual">
+      <div class="section-inner">
+        <div>
+          <h2>Join ASCENT at NITK Surathkal</h2>
+          <p class="lead">ASCENT 2027 will be held with the 28th International Conference on Distributed Computing and Networking at National Institute of Technology Karnataka, Surathkal, India.</p>
+        </div>
+        <div>
+          <a class="button primary" href="https://sites.google.com/view/ascent-icdcn2026/" target="_blank" rel="noreferrer">View Previous Edition</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="section-inner">
+      <span>ASCENT 2027 · Workshop in conjunction with ICDCN 2027</span>
+      <span>Contact: anurag.satpathy@mst.edu</span>
+    </div>
+  </footer>
+</body>
+</html>

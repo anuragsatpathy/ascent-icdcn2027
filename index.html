@@ -279,6 +279,17 @@
       color: #334357;
     }
 
+    .guidelines {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .guidelines li {
+      margin: 0 0 10px;
+    }
+
     .image-split {
       display: grid;
       grid-template-columns: 1.05fr .95fr;
@@ -413,6 +424,16 @@
       border: 1px solid var(--line);
       border-radius: 8px;
       background: white;
+    }
+
+    .tba-panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      padding: 30px 34px;
+      color: var(--muted);
+      font-size: 24px;
+      font-weight: 800;
     }
 
     .speaker-art {
@@ -559,7 +580,11 @@
     <section>
       <div class="section-inner section-head">
         <h2>Submission Guidelines</h2>
-        <p class="lead">Submissions should use the official ACM LaTeX article template, with the `sigconf,authordraft` document class. Papers must be at most 6 pages in double-column ACM format, including figures, tables, and references. At least one author of each accepted paper must register for ICDCN and present the work in person.</p>
+        <ul class="guidelines">
+          <li>Use the official ACM LaTeX article template with the <code>sigconf,authordraft</code> document class.</li>
+          <li>Papers must be at most 6 pages in double-column ACM format, including figures, tables, and references.</li>
+          <li>At least one author of each accepted paper must register for ICDCN and present the work in person.</li>
+        </ul>
       </div>
       <div class="section-inner timeline">
         <div class="date"><time>1 Aug 2026</time><span>Submission portal opens</span></div>
@@ -574,7 +599,6 @@
       <div class="section-inner">
         <div class="section-head">
           <h2>Committee</h2>
-          <p class="lead">ASCENT 2027 is organized by researchers spanning edge/cloud systems, HPC, mobile computing, cyber-physical systems, and distributed intelligent applications.</p>
         </div>
         <div class="people">
           <div class="person"><b><a href="https://anuragsatpathy.github.io/" target="_blank" rel="noreferrer">Anurag Satpathy</a></b><span>Missouri University of Science and Technology, USA<br>anurag.satpathy@mst.edu</span></div>
@@ -589,7 +613,6 @@
       <div class="section-inner">
         <div class="section-head">
           <h2>Proposed Technical Program Committee</h2>
-          <p class="lead">The TPC will bring together expertise in distributed systems, edge computing, HPC, AI systems, networking, and applied intelligent infrastructure.</p>
         </div>
         <ul class="tpc-list">
           <li>Chittaranjan Swain, ABV-IIITM Gwalior</li>
@@ -617,19 +640,8 @@
       <div class="section-inner">
         <div class="section-head">
           <h2>Program</h2>
-          <p class="lead">The final schedule will be announced after paper acceptance. The proposed format is a full-day workshop with a keynote, 5-10 refereed papers, and discussion-oriented sessions.</p>
         </div>
-        <table class="schedule">
-          <thead>
-            <tr><th>Session</th><th>Proposed Format</th><th>Status</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Opening</td><td>Welcome from organizers and ASCENT 2027 framing</td><td>To be announced</td></tr>
-            <tr><td>Keynote</td><td>Invited talk on emerging edge-HPC, AI, or quantum-enabled systems</td><td>To be announced</td></tr>
-            <tr><td>Paper Sessions</td><td>Refereed research talks grouped by systems, AI/LLMs, and applications</td><td>After acceptance notification</td></tr>
-            <tr><td>Discussion</td><td>Community discussion on future directions and collaborative opportunities</td><td>To be announced</td></tr>
-          </tbody>
-        </table>
+        <div class="tba-panel">TBA</div>
       </div>
     </section>
 
@@ -637,15 +649,8 @@
       <div class="section-inner">
         <div class="section-head">
           <h2>Keynote</h2>
-          <p class="lead">The keynote speaker will be announced after confirmation. Proposed speakers include Simone Silvestri, Eirini Eleni Tsiropoulou, Yogesh Simmhan, and Sajal K. Das.</p>
         </div>
-        <div class="keynote-placeholder">
-          <div class="speaker-art" aria-hidden="true"></div>
-          <div>
-            <h3>Keynote speaker to be announced</h3>
-            <p class="lead">This space can feature the speaker photo, title, abstract, and biography once confirmed. For Google Sites, use a two-column section with the speaker image on the left and talk details on the right.</p>
-          </div>
-        </div>
+        <div class="tba-panel">TBA</div>
       </div>
     </section>
 

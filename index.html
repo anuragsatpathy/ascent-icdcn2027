@@ -279,15 +279,212 @@
       color: #334357;
     }
 
-    .guidelines {
-      margin: 0;
-      padding-left: 20px;
-      color: var(--muted);
-      font-size: 18px;
+    .submission-section {
+      background:
+        radial-gradient(circle at 100% 0, rgba(15, 130, 126, .10), transparent 32%),
+        linear-gradient(180deg, #fff 0%, #f7fafc 100%);
     }
 
-    .guidelines li {
-      margin: 0 0 10px;
+    .submission-intro {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 30px;
+    }
+
+    .submission-intro .lead {
+      max-width: 720px;
+    }
+
+    .publication-card {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 22px;
+      padding: 28px;
+      border: 1px solid rgba(15, 130, 126, .24);
+      border-radius: 14px;
+      background: linear-gradient(135deg, #edf9f8 0%, #fff 72%);
+      box-shadow: 0 16px 38px rgba(23, 33, 47, .08);
+    }
+
+    .guideline-icon {
+      display: grid;
+      place-items: center;
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+      background: var(--teal);
+      color: white;
+      font-size: 14px;
+      font-weight: 850;
+      letter-spacing: .04em;
+      box-shadow: 0 10px 22px rgba(15, 130, 126, .22);
+    }
+
+    .publication-card h3,
+    .guideline-card h3,
+    .award-banner h3 {
+      margin: 0;
+      color: var(--navy);
+    }
+
+    .publication-card h3 {
+      font-size: 25px;
+    }
+
+    .publication-card p,
+    .guideline-card p,
+    .award-banner p {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    .resource-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 18px;
+    }
+
+    .resource-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid rgba(15, 130, 126, .25);
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: white;
+      color: var(--teal);
+      font-size: 14px;
+      font-weight: 760;
+      text-decoration: none;
+    }
+
+    .resource-links a:hover {
+      border-color: var(--teal);
+      transform: translateY(-1px);
+    }
+
+    .instruction-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 42px 0 18px;
+      color: var(--navy);
+      font-size: 26px;
+    }
+
+    .instruction-title::before {
+      content: "";
+      width: 34px;
+      height: 4px;
+      border-radius: 999px;
+      background: var(--coral);
+    }
+
+    .guideline-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .guideline-card {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: white;
+      box-shadow: 0 12px 28px rgba(23, 33, 47, .06);
+    }
+
+    .guideline-card .guideline-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: #eaf2f5;
+      color: var(--navy);
+      box-shadow: none;
+    }
+
+    .guideline-card h3 {
+      font-size: 19px;
+    }
+
+    .guideline-card code {
+      overflow-wrap: anywhere;
+    }
+
+    .code-sample {
+      display: block;
+      margin-top: 12px;
+      border-radius: 8px;
+      padding: 10px 12px;
+      background: #15283b;
+      color: #ecf8f7;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .decision-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .decision-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 20px;
+      border: 1px dashed rgba(15, 130, 126, .45);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .78);
+    }
+
+    .decision-card b {
+      color: var(--navy);
+      font-size: 17px;
+    }
+
+    .tba {
+      flex: 0 0 auto;
+      border-radius: 999px;
+      padding: 7px 12px;
+      background: #fff1ec;
+      color: var(--coral);
+      font-size: 13px;
+      font-weight: 850;
+      letter-spacing: .06em;
+    }
+
+    .award-banner {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 20px;
+      align-items: center;
+      margin-top: 18px;
+      padding: 24px 26px;
+      border: 1px solid #e3c669;
+      border-radius: 14px;
+      background: linear-gradient(120deg, #fff8d9, #fffdf4);
+    }
+
+    .award-banner .guideline-icon {
+      background: var(--gold);
+      color: #2e270d;
+      box-shadow: 0 10px 22px rgba(225, 188, 66, .24);
+    }
+
+    .dates-title {
+      margin: 50px 0 18px;
+      color: var(--navy);
+      font-size: 26px;
     }
 
     .image-split {
@@ -308,15 +505,26 @@
     .timeline {
       display: grid;
       grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 10px;
+      gap: 12px;
     }
 
     .date {
-      border-left: 5px solid var(--teal);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
       background: white;
-      border-radius: 8px;
-      padding: 18px;
-      min-height: 150px;
+      border-radius: 12px;
+      padding: 22px 18px 18px;
+      min-height: 138px;
+      box-shadow: 0 10px 24px rgba(23, 33, 47, .06);
+    }
+
+    .date::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 5px;
+      background: var(--teal);
     }
 
     .date time {
@@ -489,7 +697,12 @@
       }
 
       .links { justify-content: flex-start; }
-      .facts, .grid, .timeline, .people, .section-head, .image-split, .keynote-placeholder, .footer-visual .section-inner {
+      .facts, .grid, .timeline, .people, .section-head, .submission-intro, .guideline-grid, .decision-row, .image-split, .keynote-placeholder, .footer-visual .section-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .publication-card,
+      .award-banner {
         grid-template-columns: 1fr;
       }
 
@@ -576,20 +789,77 @@
       </div>
     </section>
 
-    <section>
-      <div class="section-inner section-head">
-        <h2>Submission Guidelines</h2>
-        <ul class="guidelines">
-          <li><strong>Proceedings:</strong> Accepted workshop papers will be published in a companion volume with the ICDCN 2027 proceedings through the ACM International Conference Proceedings Series (ICPS), which is indexed by ACM, DBLP, Scopus, and other indexing services.</li>
-          <li><strong>Open access:</strong> ACM's ICPS open-access model may require an Article Processing Charge (APC) when an author's institution is not part of the ACM Open program and the author does not qualify for a waiver. See the <a href="https://www.acm.org/publications/icps/author-guidance" target="_blank" rel="noreferrer">ICPS author guidance</a>, <a href="https://www.acm.org/publications/icps/faq" target="_blank" rel="noreferrer">ICPS publishing FAQ</a>, and <a href="https://www.acm.org/publications/openaccess" target="_blank" rel="noreferrer">ACM Open information</a>.</li>
-          <li><strong>ACM template:</strong> Submissions must use <code>acmart.cls</code> version 2.16 or later with <code>\documentclass[sigconf,authordraft]{acmart}</code>. Download the official <a href="https://www.acm.org/publications/proceedings-template" target="_blank" rel="noreferrer">ACM proceedings template</a>.</li>
-          <li><strong>Review:</strong> Papers will undergo double-blind peer review and must not reveal author names, affiliations, email addresses, or identities in the text. Reviews will follow the <a href="https://www.acm.org/publications/policies/peer-review" target="_blank" rel="noreferrer">ACM Peer Review Policy</a>.</li>
-          <li><strong>Generative AI:</strong> Use of generative AI tools must follow the <a href="https://www.acm.org/publications/policies/frequently-asked-questions" target="_blank" rel="noreferrer">ACM authorship and generative AI policy</a>.</li>
-          <li><strong>Paper length:</strong> TBA.</li>
-          <li><strong>Submission portal:</strong> TBA.</li>
-          <li>At least one author of each accepted paper must register for ICDCN and present the work in person.</li>
-          <li><strong>Best Paper Award:</strong> ASCENT 2027 will consider a Best Paper Award for an outstanding submission selected by the workshop program committee.</li>
-        </ul>
+    <section class="submission-section" id="submission">
+      <div class="section-inner">
+        <div class="submission-intro">
+          <h2>Submission Guidelines</h2>
+          <p class="lead">Prepare your manuscript for double-blind review using the official ACM proceedings format. Key publication and submission requirements are organized below.</p>
+        </div>
+
+        <article class="publication-card">
+          <span class="guideline-icon" aria-hidden="true">ICPS</span>
+          <div>
+            <h3>Proceedings &amp; Open Access</h3>
+            <p>Accepted workshop papers will appear in a companion volume with the ICDCN 2027 proceedings through the ACM International Conference Proceedings Series (ICPS), indexed by ACM, DBLP, Scopus, and other indexing services.</p>
+            <p>Under ACM's ICPS open-access model, an Article Processing Charge may apply when an author's institution is not part of ACM Open and the author does not qualify for a waiver.</p>
+            <div class="resource-links" aria-label="ACM publication resources">
+              <a href="https://www.acm.org/publications/icps/author-guidance" target="_blank" rel="noreferrer">Author guidance ↗</a>
+              <a href="https://www.acm.org/publications/icps/faq" target="_blank" rel="noreferrer">ICPS publishing FAQ ↗</a>
+              <a href="https://www.acm.org/publications/openaccess" target="_blank" rel="noreferrer">ACM Open ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <h3 class="instruction-title">Submission Instructions</h3>
+        <div class="guideline-grid">
+          <article class="guideline-card">
+            <span class="guideline-icon" aria-hidden="true">ACM</span>
+            <div>
+              <h3>LaTeX Template</h3>
+              <p>Use <code>acmart.cls</code> version 2.16 or later and the official <a href="https://www.acm.org/publications/proceedings-template" target="_blank" rel="noreferrer">ACM proceedings template</a>.</p>
+              <code class="code-sample">\documentclass[sigconf,authordraft]{acmart}</code>
+            </div>
+          </article>
+
+          <article class="guideline-card">
+            <span class="guideline-icon" aria-hidden="true">2×</span>
+            <div>
+              <h3>Double-Blind Review</h3>
+              <p>Do not reveal author names, affiliations, email addresses, or identities anywhere in the manuscript. Reviews follow the <a href="https://www.acm.org/publications/policies/peer-review" target="_blank" rel="noreferrer">ACM Peer Review Policy</a>.</p>
+            </div>
+          </article>
+
+          <article class="guideline-card">
+            <span class="guideline-icon" aria-hidden="true">AI</span>
+            <div>
+              <h3>Generative AI Policy</h3>
+              <p>Use of generative AI tools must comply with the <a href="https://www.acm.org/publications/policies/frequently-asked-questions" target="_blank" rel="noreferrer">ACM authorship and generative AI policy</a>.</p>
+            </div>
+          </article>
+
+          <article class="guideline-card">
+            <span class="guideline-icon" aria-hidden="true">LIVE</span>
+            <div>
+              <h3>Registration &amp; Presentation</h3>
+              <p>At least one author of every accepted paper must register for ICDCN 2027 and present the work in person.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="decision-row">
+          <div class="decision-card"><b>Workshop paper length</b><span class="tba">TBA</span></div>
+          <div class="decision-card"><b>Submission portal</b><span class="tba">TBA</span></div>
+        </div>
+
+        <aside class="award-banner">
+          <span class="guideline-icon" aria-hidden="true">★</span>
+          <div>
+            <h3>Best Paper Award</h3>
+            <p>ASCENT 2027 will consider a Best Paper Award for an outstanding submission selected by the workshop program committee.</p>
+          </div>
+        </aside>
+
+        <h3 class="dates-title">Important Dates</h3>
       </div>
       <div class="section-inner timeline">
         <div class="date"><time>1 Aug 2026</time><span>Submission portal opens</span></div>

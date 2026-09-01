@@ -589,11 +589,26 @@
       font-size: 18px;
     }
 
+    .date time s {
+      display: block;
+      color: #9da8b3;
+      font-size: 14px;
+      font-weight: 750;
+      margin-bottom: 4px;
+    }
+
     .date span {
       display: block;
       margin-top: 10px;
       color: var(--muted);
       font-weight: 650;
+    }
+
+    .extended-label {
+      display: inline-block;
+      margin-top: 6px;
+      color: var(--coral);
+      font-weight: 850;
     }
 
     .people {
@@ -926,7 +941,7 @@
       </div>
       <div class="section-inner timeline">
         <div class="date"><time>10 Aug 2026</time><span>Submission portal opens</span></div>
-        <div class="date"><time>1 Sep 2026</time><span>Paper submission deadline</span></div>
+        <div class="date"><time><s>1 Sep 2026</s>15 Sep 2026</time><span>Paper submission deadline <span class="extended-label">[extended deadline]</span></span></div>
         <div class="date"><time>15 Oct 2026</time><span>Acceptance notification</span></div>
         <div class="date"><time>29 Oct 2026</time><span>Camera-ready deadline</span></div>
         <div class="date"><time>4-7 Jan 2027</time><span>Workshop during ICDCN 2027</span></div>

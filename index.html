@@ -694,6 +694,31 @@
 
     .schedule tr:last-child td { border-bottom: 0; }
 
+    .accepted-papers {
+      display: grid;
+      gap: 14px;
+    }
+
+    .accepted-paper {
+      padding: 22px 24px;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--teal);
+      border-radius: 8px;
+      background: white;
+    }
+
+    .accepted-paper h3 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 20px;
+      line-height: 1.35;
+    }
+
+    .accepted-paper p {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
     .keynote-placeholder {
       display: grid;
       grid-template-columns: 280px 1fr;
@@ -790,7 +815,7 @@
       <div class="links">
         <a href="#home">Home</a>
         <a href="#committee">Committee</a>
-        <a href="#program">Program</a>
+        <a href="#program">Accepted Papers</a>
         <a href="#keynote">Keynote</a>
         <a href="https://sites.google.com/view/ascent-icdcn2026/" target="_blank" rel="noreferrer">Previous Edition</a>
       </div>
@@ -984,9 +1009,31 @@
     <section class="band" id="program">
       <div class="section-inner">
         <div class="section-head">
-          <h2>Program</h2>
+          <h2>Accepted Papers</h2>
+          <p class="lead">We are pleased to announce the papers accepted for presentation at ASCENT 2027.</p>
         </div>
-        <div class="tba-panel">TBA</div>
+        <div class="accepted-papers">
+          <article class="accepted-paper">
+            <h3>Beyond the Model: Why TinyML Acoustic Classifiers Fail On-Device? and How to Fix the Pipeline</h3>
+            <p>Debolina Chowdhury, Jagan G, Suman Samui, and Sujoy Saha</p>
+          </article>
+          <article class="accepted-paper">
+            <h3>Graph-Driven Workflow Orchestration Across Heterogeneous Distributed Infrastructure</h3>
+            <p>Sedar Olmez and Chitti Srinivasa Phani</p>
+          </article>
+          <article class="accepted-paper">
+            <h3>HEO: Heuristic-based Efficient Computational Offloading in Mobile Edge Computing</h3>
+            <p>Ananya Pandey, Chittaranjan Swain, Jitendra Kumar Rout, and Deepak Singh</p>
+          </article>
+          <article class="accepted-paper">
+            <h3>Comparative Evaluation of Metaheuristic and Deep Reinforcement Learning based Service Placement Strategies in Vehicular Edge Computing</h3>
+            <p>Tom Kurian, Neha Nair, John Paul Martin, and Christina Terese Joseph</p>
+          </article>
+          <article class="accepted-paper">
+            <h3>AMIL: Adaptive Model Integrity Learning for Turning Free Riders into Con-Riders in Non-IID Federated Learning</h3>
+            <p>Gowry Sailaja Vuravakonda</p>
+          </article>
+        </div>
       </div>
     </section>
 
